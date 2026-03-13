@@ -1,6 +1,9 @@
 <ul class="list-group list-group-flush">
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
+    {{#if categories}}
+        {{#each categories}}
+                <li class="list-group-item">{{this.name}}</li>
+        {{/each}}
+    {{else}}
+        <h5>Aún no tenemos categorías</h5>
+    {{/if}}
 </ul>

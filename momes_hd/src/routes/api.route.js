@@ -5,11 +5,9 @@ const path = require("node:path")
 router.post("/update-meme", async (req, res) => {
     const { file } = req.files
 
-    await file.mv(path.join(process.cwd(), "/public/images", file.name))
+    await file.mv(path.join(process.cwd(), "/public/images", file.name)) // /raiz-proyecto/public/images/file-name.jpg
 
-    res.json({
-        ok: true
-    })
+    res.redirect("/")
 })
 
 module.exports = { apiRoutes: router }

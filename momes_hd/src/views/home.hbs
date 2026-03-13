@@ -14,14 +14,22 @@
         <div class="row">
             <div class="col-12 col-md-8">
                 <main class="row">
-                    <div class="col-12">
-                        {{> memeCard }}
-                    </div>
+                    {{#if posts}}
+                        {{#each posts}}
+                            <div class="col-12">
+                                {{> memeCard post=this }}
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <div class="col-12">
+                            <h2>No tenemos ningún meme para tí</h2>
+                        </div>
+                    {{/if}}
                 </main>
             </div>
             <div class="col-12 col-md-4">
                 <aside>
-                    {{> asideSection }}
+                    {{> asideSection categories=categories }}
                 </aside>
             </div>
         </div>

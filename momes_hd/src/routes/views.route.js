@@ -1,10 +1,13 @@
 const express = require("express")
-const { Post } = require("../models")
+const { Post, Category } = require("../models")
 const router = express.Router()
 
 router.get("/", async (req, res) => {
     const posts = await Post.findAll()
-    res.render("home", { posts })
+    const categories = await Category.findAll()
+
+    console.log(categories)
+    res.render("home", { posts, categories })
 })
 
 router.get("/subir-meme", (req, res) => {
