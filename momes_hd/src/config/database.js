@@ -10,6 +10,7 @@ const sequelize = new Sequelize(process.env.DB_URI, {
             rejectUnauthorized: false,
         },
     },
+    logging: false
 })
 
 module.exports = { sequelize };

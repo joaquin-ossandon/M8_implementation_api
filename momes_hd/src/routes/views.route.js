@@ -1,17 +1,12 @@
 const express = require("express")
-const { Post, Category } = require("../models")
 const router = express.Router()
 
-router.get("/", async (req, res) => {
-    const posts = await Post.findAll()
-    const categories = await Category.findAll()
+const { 
+    renderPosts, renderSubirMeme, renderLogin, renderRegister } = require("../controllers/views.controllers")
 
-    console.log(categories)
-    res.render("home", { posts, categories })
-})
-
-router.get("/subir-meme", (req, res) => {
-    res.render("memeUpload")
-})
+router.get("/", renderPosts)
+router.get("/subir-meme", renderSubirMeme)
+router.get("/login", renderLogin)
+router.get("/register", renderRegister)
 
 module.exports = { viewRoutes: router }

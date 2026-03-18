@@ -10,7 +10,8 @@
 
 <body>
     <div class="container d-flex align-items-center justify-content-center min-vh-100">
-        <form class="border border-1 p-4 border-dark border-opacity-50 rounded-2">
+        <form action="/api/update-meme" method="post" enctype="multipart/form-data" class="border border-1 p-4 border-dark border-opacity-50 rounded-2">
+            <h3>Hola {{user.name}}!</h3>
             <div class="mb-3">
                 <label for="file" class="form-label">Sube un meme</label>
                 <input class="form-control" type="file" id="file" name="file" accept="image/*">

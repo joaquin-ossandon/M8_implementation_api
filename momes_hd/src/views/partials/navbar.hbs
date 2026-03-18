@@ -1,5 +1,17 @@
-<nav class="navbar bg-body-tertiary mb-3">
+<nav class="navbar bg-body-tertiary mb-3 position-sticky top-0 z-1">
   <div class="container">
     <a class="navbar-brand" href="#">MomesHD</a>
+    <div class="d-flex align-items-center gap-3">
+      {{#if user.name}}
+      <span class="fs-6">Hola, {{user.name}}</span>
+      <a href="/subir-meme" class="btn btn-primary d-flex align-items-center gap-1"><i class="bi bi-plus fs-5"></i> Añadir
+        meme</a>
+      <a href="/api/logout" class="btn btn-outline-dark d-flex align-items-center gap-1"><i
+          class="bi bi-box-arrow-right fs-5"></i> Cerrar sesión</a>
+      {{else}}
+      <a href="/login" class="btn btn-primary d-flex align-items-center gap-1"><i class="bi bi-person fs-5"></i> Iniciar
+        sesión</a>
+      {{/if}}
+    </div>
   </div>
 </nav>

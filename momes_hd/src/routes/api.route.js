@@ -1,13 +1,10 @@
 const express = require("express")
 const router = express.Router()
-const path = require("node:path")
+const { postMeme, login, register, logout } = require("../controllers/api.controllers")
 
-router.post("/update-meme", async (req, res) => {
-    const { file } = req.files
-
-    await file.mv(path.join(process.cwd(), "/public/images", file.name)) // /raiz-proyecto/public/images/file-name.jpg
-
-    res.redirect("/")
-})
+router.post("/update-meme", postMeme)
+router.post("/login", login)
+router.post("/register", register)
+router.get("/logout", logout)
 
 module.exports = { apiRoutes: router }

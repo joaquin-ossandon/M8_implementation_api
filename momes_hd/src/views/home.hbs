@@ -6,29 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/icons/bootstrap-icons.min.css">
 </head>
 
 <body>
-    {{> navbar }}
+    {{> navbar user=user}}
     <div class="container mx-auto">
         <div class="row">
             <div class="col-12 col-md-8">
                 <main class="row">
                     {{#if posts}}
-                        {{#each posts}}
-                            <div class="col-12">
-                                {{> memeCard post=this }}
-                            </div>
-                        {{/each}}
+                    {{#each posts}}
+                    <div class="col-12">
+                        {{> memeCard post=this }}
+                    </div>
+                    {{/each}}
                     {{else}}
-                        <div class="col-12">
-                            <h2>No tenemos ningún meme para tí</h2>
-                        </div>
+                    <div class="col-12">
+                        <h2>No tenemos ningún meme para tí</h2>
+                    </div>
                     {{/if}}
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            {{#each pagesCount}}
+                            <li class="page-item"><a class="page-link" href="/?page={{this}}">{{this}}</a></li>
+                            {{/each}}
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                 </main>
             </div>
             <div class="col-12 col-md-4">
-                <aside>
+                <aside class="position-sticky z-1" style="top: 72px;">
                     {{> asideSection categories=categories }}
                 </aside>
             </div>

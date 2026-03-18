@@ -1,5 +1,5 @@
 require("dotenv").config()
-const { sequelize, Post, Category } = require("../src/models")
+const { sequelize, Post, Category, User } = require("../src/models")
 
 const posts = [
     {
@@ -118,11 +118,26 @@ const post_category = [
     { postId: 20, categoryId: 2 }
 ];
 
+const user = [
+    {
+        name: "Juanito",
+        email: "juanito@gmail.com",
+        password: "admin123"
+    },
+    {
+        name: "Javiera",
+        email: "javiera@gmail.com",
+        password: "admin123"
+    }
+]
+
 const createData = async () => {
     await sequelize.sync({ force: true })
 
     await Post.bulkCreate(posts)
     await Category.bulkCreate(categories)
+    await User.create(user[0])
+    await User.create(user[1])
 
     const postCategory = sequelize.models.post_category
     await postCategory.bulkCreate(post_category)
