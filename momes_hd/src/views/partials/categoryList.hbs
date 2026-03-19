@@ -1,7 +1,9 @@
 <ul class="list-group list-group-flush">
     {{#if categories}}
         {{#each categories}}
-                <li class="list-group-item">{{this.name}}</li> 
+                <li class="list-group-item">
+                    <a href="/categories/{{this.slug}}">{{this.name}}</a>
+                </li> 
                 {{!-- /categories/codigo-y-cafe -> /categories/{{this.slug}} --}}
         {{/each}}
     {{else}}

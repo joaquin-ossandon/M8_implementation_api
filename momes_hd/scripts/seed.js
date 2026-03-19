@@ -86,11 +86,11 @@ const posts = [
 
 const categories = [
     { id: 1, name: "Código y Café", slug: "codigo-y-cafe" },
-    { id: 2, name: "Vida Adulta" },
-    { id: 3, name: "Salud Mental (o falta de ella)" },
-    { id: 4, name: "Procrastinación" },
-    { id: 5, name: "Random & Gatos" }
-]; // normalize que viene en Intl de Js nativo
+    { id: 2, name: "Vida Adulta", slug: "vida-adulta" },
+    { id: 3, name: "Salud Mental (o falta de ella)", slug: "salud-mental" },
+    { id: 4, name: "Procrastinación", slug: "procastinacion" },
+    { id: 5, name: "Random y Gatos", slug: "random-y-gatos" }
+];
 
 const post_category = [
     { postId: 1, categoryId: 1 },
