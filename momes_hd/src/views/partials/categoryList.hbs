@@ -1,7 +1,8 @@
 <ul class="list-group list-group-flush">
     {{#if categories}}
         {{#each categories}}
-                <li class="list-group-item">{{this.name}}</li>
+                <li class="list-group-item">{{this.name}}</li> 
+                {{!-- /categories/codigo-y-cafe -> /categories/{{this.slug}} --}}
         {{/each}}
     {{else}}
         <h5>Aún no tenemos categorías</h5>
